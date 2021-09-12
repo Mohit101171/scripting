@@ -1,3 +1,4 @@
+#!/bin/bash
 
 Status_Check() {
   if [ $1 -eq 0 ]; then
@@ -13,7 +14,7 @@ Print() {
 }
 
 if [ $UID -ne 0 ]; then
-    echo -e "\e[1;33m You should exevute this script as root user\e[0m"
+    echo -e "\n\e[1;33m You should exevute this script as root user\e[0m"
     exit 1
     
 fi
