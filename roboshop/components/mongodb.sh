@@ -1,18 +1,7 @@
 #!/bin/bash
 
-Status_Check() {
-  if [$1 -eq 0 ]; then
-    echo -e "\e[32mSUCCESS\e[0m"
-  else
-    echo -e "\e[31mFAILURE\e[0m"
-    exit 2
-  fi
-} 
+source components/common.sh
 
-Print() {
-  echo -n -e "$1 \t- "
-}
- 
 Print "Setting up MongoDB Repo"
 echo '[mongodb-orog-4.2]
 name=MongoDB Repository
@@ -27,7 +16,7 @@ Print "Installing MongoDB"
  
 
 Print "Configuring MongoDB"
- sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 Status_Check $1
 
 Print "Starting MongoDB"
