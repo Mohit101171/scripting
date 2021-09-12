@@ -3,7 +3,7 @@
 source components/common.sh
 
 Print "Installing NodeJS"
-yum install nodejs mke gcc-c++ -y &>>$LOG
+yum install nodejs make gcc-c++ -y &>>$LOG
 Status_Check $?
 
 Print "Adding Roboshop User"
@@ -14,11 +14,6 @@ Print "Downloading Catalogue Content"
 curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
 Status_Check $?
 
-Print "Extracting Catalogue"
-cd /home/roboshop
-unzip /tmp/catalogue.zip &>>$LOG 
-mv catalogue-main catalogue
-Status_Check $?
 
 cd /home/roboshop/catalogue
 npm install --unsafe-perm &>>$LOG
