@@ -13,6 +13,7 @@ echo "User already exists, hence skipping"
 else
 useradd roboshop &>>$LOG
 useradd robohsop &>>$LOG
+fi
 Status_Check $?
 
 Print "Downloading Catalogue Content"
