@@ -14,7 +14,7 @@ Print "Downloading Catalogue Content"
 curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
 Status_Check $?
 
-Print "Extraxting Catalogue"
+Print "Extracting Catalogue"
 cd /home/roboshop
 unzip /tmp/catalogue.zip &>>$LOG 
 mv catalogue-main catalogue
