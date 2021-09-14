@@ -10,12 +10,13 @@ Print "Setup Redis Repos"
 yum-config-manager --enable remi &>>$LOG
 Status_Check $?
 
+Print "Install Redis"
+yum install redis -y &>>$LOG
+
 Print "Configure Redis Listen Adress"
-yum install redis -y
-sed -i -e 's/127.0.0.1/0.0.0.0' /etc/redis.conf
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/redis.conf
 Status_Check $?
 
 Print "Start Redis Service"
-
-systemctl enable redis && systemctl start redis
+systemctl enable redis && systemctl start redis &>>$LOG
 Status_Check $?
