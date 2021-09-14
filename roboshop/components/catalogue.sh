@@ -9,7 +9,7 @@ Status_Check $?
 Print "Adding Roboshop User"
 id roboshop &>>$LOG
 if [ $? -eq 0 ]; then
-echo "User already exists, hence skipping"
+echo "User already exists, hence skipping\t"
 else
 useradd roboshop &>>$LOG
 fi
@@ -19,7 +19,7 @@ Print "Downloading Catalogue Content"
 curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
 Status_Check $?
 
-Print "Extracting Catalogue"
+Print "Extracting Catalogue\t"
 cd /home/roboshop
 rm -rf catalogue
 unzip /tmp/catalogue.zip &>>$LOG 
