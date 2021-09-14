@@ -6,18 +6,18 @@ Print "Installing Yum Utils & Downloading Redis Repos"
 yum install epel-release yum-utils  http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y &>>$LOG
 Status_Check $?
 
-Print "Setup Redis Repos\t"
+Print "Setup Redis Repos\t\t\t"
 yum-config-manager --enable remi &>>$LOG
 Status_Check $?
 
-Print "Install Redis\t\t"
+Print "Install Redis\t\t\t\t"
 yum install redis -y &>>$LOG
 Status_Check $?
 
-Print "Configure Redis Listen Adress\t"
+Print "Configure Redis Listen Adress\t\t"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/redis.conf
 Status_Check $?
 
-Print "Start Redis Service\t\t"
+Print "Start Redis Service\t\t\t"
 systemctl enable redis && systemctl start redis &>>$LOG
 Status_Check $?
