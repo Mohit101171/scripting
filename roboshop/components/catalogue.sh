@@ -9,7 +9,7 @@ Status_Check $?
 Print "Adding Roboshop User"
 id roboshop &>>$LOG
 if [ $? -eq 0 ]; then
-echo "User already exists, hence skipping\t"
+echo "User already exists, hence skipping \t"
 else
 useradd roboshop &>>$LOG
 fi
