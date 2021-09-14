@@ -8,7 +8,7 @@ Status_Check $?
 
 Print "Adding Roboshop User"
 id roboshop &>>$LOG
-if [ $ -eq 0 ]; then
+if [ $? -eq 0 ]; then
 echo "User already exists, hence skipping"
 else
 useradd roboshop &>>$LOG
@@ -25,9 +25,12 @@ unzip /tmp/catalogue.zip &>>$LOG
 mv catalogue-main catalogue
 Status_Check $?
 
+Print "Download NodeJS Dependencies"
 cd /home/roboshop/catalogue
 npm install --unsafe-perm &>>$LOG
+Status_Check $?
 
+chown roboshop:roboshop -R /home/roboshop
 # mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
 # systemctl daemon-reload
 # systemctl start catalogue
