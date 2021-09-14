@@ -12,7 +12,6 @@ if [ $ -eq 0 ]; then
 echo "User already exists, hence skipping"
 else
 useradd roboshop &>>$LOG
-useradd robohsop &>>$LOG
 fi
 Status_Check $?
 
