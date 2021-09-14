@@ -2,14 +2,14 @@
 
 source components/common.sh
 
-Print "Installing NodeJS"
+Print "Installing NodeJS\t"
 yum install nodejs make gcc-c++ -y &>>$LOG
 Status_Check $?
 
-Print "Adding Roboshop User"
+Print "Adding Roboshop User\t"
 id roboshop &>>$LOG
 if [ $? -eq 0 ]; then
-echo "User already exists hence skipping\t"
+echo "User already exists hence skipping"
 else
 useradd roboshop &>>$LOG
 fi
