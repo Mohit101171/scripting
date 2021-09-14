@@ -21,9 +21,7 @@ Status_Check $?
 
 Print "Extracting Catalogue\t"
 cd /home/roboshop
-rm -rf catalogue
-unzip /tmp/catalogue.zip &>>$LOG 
-mv catalogue-main catalogue
+rm -rf  && unzip -o /tmp/catalogue.zip &>>$LOG && mv catalogue-main catalogue
 Status_Check $?
 
 Print "Download NodeJS Dependencies"
