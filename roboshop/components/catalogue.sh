@@ -31,7 +31,7 @@ Status_Check $?
 
 chown roboshop:roboshop -R /home/roboshop
 
-Print "Update SystemD Service"
+Print "Update SystemD Service\t"
 sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/roboshop/catalogue/systemd.service 
 Status_Check $?
 
