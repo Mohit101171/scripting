@@ -24,7 +24,7 @@ cd /home/roboshop
 rm -rf catalogue && unzip -o /tmp/catalogue.zip &>>$LOG && mv catalogue-main catalogue
 Status_Check $?
 
-Print "Downloading NodeJS Dependencies"
+Print "Download NodeJS Dependencies"
 cd /home/roboshop/catalogue
 npm install --unsafe-perm &>>$LOG
 Status_Check $?
