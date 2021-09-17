@@ -15,10 +15,14 @@ Print "Extract Frontend Archive"
 rm -rf /usr/share/nginx/* && cd /usr/share/nginx && unzip -o /tmp/frontend.zip  &>>$LOG  && mv frontend-main/* .  &>>$LOG  &&   mv static html  &>>$LOG
 Status_Check $?
 
-Print "Update Nginx\t\t"
-mv localhost.conf /etc/nginx/default.d/roboshop.conf
+Print "Copy Nginx RoboShop Config"
+mv localhost.conf /etc/nginx/default.d/roboshop.conf  &>>$LOG
+Status_Check $?
+
+Print "Update Nginx RoboShop Config"
+sed -i -e '/catalogue/ s/localhost/catalogue.roboshop.internal/' -e '/user/ s/localhost/user.roboshop.internal/' -e '/cart/ s/localhost/cart.roboshop.internal/' -e '/shipping/ s/localhost/shipping.roboshop.internal/' -e '/payment/ s/localhost/payment.roboshop.internal/' /etc/nginx/default.d/roboshop.conf  &>>$LOG
 Status_Check $?
 
 Print "Restart Nginx\t\t"
-systemctl restart nginx &>>$LOG && systemctl enable nginx &>>$LOG
+systemctl restart nginx  &>>$LOG  && systemctl enable nginx   &>>$LOG
 Status_Check $?
