@@ -20,5 +20,5 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf
 Status_Check $?
 
 Print "Restart Nginx"
-systemctl restart nginx &>>$LOG && systemctl enable nginx $>>$LOG
+systemctl restart nginx &>>$LOG && systemctl enable nginx &>>$LOG
 Status_Check $?
