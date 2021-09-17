@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 source components/common.sh
 
 Print "Install Nginx\t\t"
