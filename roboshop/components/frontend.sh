@@ -3,7 +3,7 @@
 
 source components/common.sh
 
-Print "INstall Nginx"
+Print "Install Nginx\t\t"
 yum install nginx -y &>>$LOG
 Status_Check $?
 
@@ -15,10 +15,10 @@ Print "Extract Frontend Archive"
 rm -rf /usr/share/nginx/* && cd /usr/share/nginx && unzip -o /tmp/frontend.zip  &>>$LOG  && mv frontend-main/* .  &>>$LOG  &&   mv static html  &>>$LOG
 Status_Check $?
 
-Print "Update Nginx"
+Print "Update Nginx\t\t"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 Status_Check $?
 
-Print "Restart Nginx"
+Print "Restart Nginx\t\t"
 systemctl restart nginx &>>$LOG && systemctl enable nginx &>>$LOG
 Status_Check $?
