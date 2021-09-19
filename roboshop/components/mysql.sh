@@ -51,4 +51,4 @@ Status_Check $?
 Print "Load Schema\t\t\t"
 cd mysql-main
 mysql -u root -pRoboShop@1 <shipping.sql &>>$LOG
-Status_Check $
+Status_Check $?
