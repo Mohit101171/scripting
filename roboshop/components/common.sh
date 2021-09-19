@@ -38,7 +38,7 @@ DOWNLOAD() {
   Print "Downloading ${COMPONENT} Content"
   curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG
   Status_Check $?
-  Print "Extracting ${COMPONENT}\t"
+  Print "Extracting ${COMPONENT}\t\t"
   cd /home/roboshop
   rm -rf ${COMPONENT} && unzip -o /tmp/${COMPONENT}.zip &>>$LOG && mv ${COMPONENT}-main ${COMPONENT}
   Status_Check $?
