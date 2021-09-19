@@ -23,5 +23,5 @@ sed -i -e '/catalogue/ s/localhost/catalogue.roboshop.internal/' -e '/user/ s/lo
 Status_Check $?
 
 Print "Restart Nginx\t\t"
-systemctl restart nginx    && systemctl enable nginx   
+systemctl restart nginx    && systemctl enable ngin 
 Status_Check $?
