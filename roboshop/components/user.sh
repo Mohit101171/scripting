@@ -8,4 +8,4 @@ NODEJS
 
 Print "Restart Nginx\t\t"
 systemctl restart nginx    &&  systemctl enable nginx
-Status_Check $?
+Status_Check $? 
