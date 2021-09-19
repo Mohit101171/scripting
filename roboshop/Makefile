@@ -10,7 +10,7 @@ cart:
 user:
 	@bash components/user.sh
 	
-mqsql:
+mysql:
 	@bash components/mysql.sh
 	
 rabbitmq:
